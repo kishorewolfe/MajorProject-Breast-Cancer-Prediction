@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Women Breast Cancer Prediction</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Women Breast Cancer Prediction Using ML</span></h2>
+            <div class='description'>
+                <img src="static\bcancer.png" alt="Cancer Prediction By Kishore" style="width:180px;height:170px">
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+
+
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <b>Enter the radius Mean</b>
+                <input class="form-input" type="text" name="radius_mean" placeholder="  RADIUS MEAN"><br>
+                 <b> Enter the Texture mean <b>
+
+                <input class="form-input" type="text" name="texture_mean" placeholder="TEXTURE MEAN"><br>
+                   <b>Enter the Preimeter mean </b>
+
+                <input class="form-input" type="text" name="perimeter_mean" placeholder="PERIMETER MEAN"><br>
+                                           <b>Enter the area mean </b>
+
+                 <input class="form-input" type="text" name="area_mean" placeholder="AREA MEAN"><br>
+                                               <b> Enter the smoothness mean </b>
+
+                <input class="form-input" type="text" name="smoothness_mean" placeholder="SMOOTHNESS MEAN"><br>
+                                                    <b> Enter the texture_mean </b>
+
+                <input class="form-input" type="text" name="compactness_mean" placeholder="COMPACTNESS MEAN"><br>
+                                                        <b>  Enter the compactness mean </b>
+
+                <input class="form-input" type="text" name="concavity_mean" placeholder="CONCAVITY MEAN"><br>
+                                                           <b> Enter the concave points mean  </b>
+
+                <input class="form-input" type="text" name="concave points_mean" placeholder="CONCAVE POINTS MEAN"><br>
+                                                                <b>Enter the symmetry mean </b>
+
+                <input class="form-input" type="text" name="symmetry_mean" placeholder="SYMMETRY MEAN"><br>
+                                                                    <b>Enter the fractal dimension mean mean </b>
+
+                <input class="form-input" type="text" name="fractal_dimension_mean" placeholder="FRACTAL DIMESION MEAN"><br>
+                                                                        <b> Enter the radius se  </b>
+
+                <input class="form-input" type="text" name="radius_se" placeholder="RADIUS-SE"><br>
+                                                                            <b> Enter the texture se </b>
+
+                <input class="form-input" type="text" name="texture_se" placeholder="TECTURE-SE"><br>
+                                                                                <b>Enter the perimeter se </b>
+
+                <input class="form-input" type="text" name="perimeter_se" placeholder="PERIMETER-SE"><br>
+                                                                                        <b>Enter the area se  </b>
+
+                     <input class="form-input" type="text" name="area_se" placeholder="AREA SE"><br>
+                                                                                        <b>Enter the smoothness se </b>
+
+                                         <input class="form-input" type="text" name="smoothness_se" placeholder="SMOOTHNESS SE SE"><br>
+
+                                                                                                       <b>Enter the compactness </b>
+
+                <input class="form-input" type="text" name="compactness_se" placeholder="COMPACTNESS"><br>
+                                         <b>Enter the concavity </b>
+
+                <input class="form-input" type="text" name="concavity_se" placeholder="CONCAVITY"><br>
+                                             <b>Enter the concave points se </b>
+
+                <input class="form-input" type="text" name="concave points_se" placeholder="CONCAVE POINTS-SE"><br>
+                                            <b>Enter the symmetry se </b>
+
+                <input class="form-input" type="text" name="symmetry_se" placeholder="SYMMETRY -SE"><br>
+                                            <b>Enter the fractal dimension se </b>
+
+                <input class="form-input" type="text" name="fractal_dimension_se" placeholder="FRACTIONAL DIMENSIONS"><br>
+                                                <b>Enter the radius worst </b>
+
+                <input class="form-input" type="text" name="radius_worst" placeholder="RADIUS WORST"><br>
+                                                <b>Enter the texture worst </b>
+
+                      <input class="form-input" type="text" name="texture_worst" placeholder="TEXTURE WORST"><br>
+                                                    <b>Enter the perimeter worst </b>
+
+
+                <input class="form-input" type="text" name="perimeter_worst" placeholder="PERIMETER WORST"><br>
+                                           <b>Enter the area_ worst </b>
+
+
+                <input class="form-input" type="text" name="area_worst" placeholder="AREA WORST"><br>
+                                           <b> PleaseEnter the smoothness worst </b>
+
+                <input class="form-input" type="text" name="smoothness_worst" placeholder="SMOOTHNESS WORST"><br>
+                                           <b>Enter the compactness worst </b>
+
+                <input class="form-input" type="text" name="compactness_worst" placeholder="COMPACTNESS WORST"><br>
+                                               <b>Enter the concavity worst </b>
+
+                <input class="form-input" type="text" name="concavity_worst" placeholder="CONCAVITY WORST"><br>
+                                                  <b>Enter the concave points worst </b>
+
+                 <input class="form-input" type="text" name="concave points_worst" placeholder="CONCAVE POINTS WORST"><br>
+                                                       <b>Enter symmetry worst </b>
+
+                <input class="form-input" type="text" name="symmetry_worst" placeholder="SYMMETRY WORST"><br>
+                                                       <b>Enter Fractional dimension worst </b>
+
+                <input class="form-input" type="text" name="fractal_dimension_worst" placeholder="FRACTIONAL DIMENSION WORST"><br>
+
+
+
+
+<b>Click Here To Predict!!!!</b>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+        <div class="data">
+
+            <h5>Ten real-valued features are computed for each cell nucleus:</h5>
+
+            <h6>a) radius (mean of distances from center to points on the perimeter)</h6>
+            <h6>b) texture (standard deviation of gray-scale values)</h6>
+            <h6>c) perimeter</h6>
+            <h6>d) area</h6>
+            <h6>e) smoothness (local variation in radius lengths)</h6>
+            <h6>f) compactness (perimeter^2 / area - 1.0)</h6>
+            <h6>g) concavity (severity of concave portions of the contour)</h6>
+            <h6>h) concave points (number of concave portions of the contour)</h6>
+            <h6>i) symmetry</h6>
+            <h6>j) fractal dimension ("coastline approximation" - 1)</h6>
+        </div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+           </div>
+           <p class='footer-description'>by Wolf.</p>
+       </div>
+
+    </body>
+</html>

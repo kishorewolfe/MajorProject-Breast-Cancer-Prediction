@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Cancer Prediction Using ML</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Cancer Prediction Using ML</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>You  Have cancer.</span></h1>
+						<b>Be Bold , Dont Lose faith</b>
+
+				<b>Please Refer the following Link :</b>  <a href="https://www.foundationforwomenscancer.org/gynecologic-cancers/gynecologic-cancer-basics/newly-diagnosed/"> Cancer News!</a>
+				<img src="static\undraw_workout_gcgu.svg">
+
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>You Dont Have cancer</span></h1>
+				<img src="static\undraw_Loving_it_re_jfh4.svg">
+			<b>Have A Nice Day Ahead</b>
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+       <div class='footer'>
+
+           <p class='footer-description'>Cancer Prediction By Kishore</p>
+       </div>
+
+	</body>
+</html>
